@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HotelProject.BusinessLayer
+namespace HotelProject_DtoLayer
 {
     public class Class1
     {
