@@ -10,7 +10,7 @@ using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.DataAccessLayer.EntityFramework
 {
-    internal class EfServiceDal : GenericRepository<Service>, IServicesDal
+    public  class EfServiceDal : GenericRepository<Service>, IServicesDal
     {
 
         public EfServiceDal(Context context) : base(context)
