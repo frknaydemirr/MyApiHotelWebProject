@@ -50,7 +50,17 @@ namespace HotelProject.WebApi
             services.AddScoped<ITestimonialService, TestimonialManager>();
 
 
-
+            //bir Api ýn baþka kaynaklar tarafýndan  tüketilmesini consume eden metot.
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("OtelApiCors", opts =>
+                {
+                    opts.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
+            });
+               
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -70,7 +80,7 @@ namespace HotelProject.WebApi
             }
 
             app.UseRouting();
-
+            app.UseCors("OtelApiCors");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
