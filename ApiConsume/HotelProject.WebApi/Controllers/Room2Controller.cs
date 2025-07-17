@@ -4,6 +4,9 @@ using HotelProject.DtoLayer.Dtos.RoomDto;
 using HotelProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace HotelProject.WebApi.Controllers
@@ -41,6 +44,16 @@ namespace HotelProject.WebApi.Controllers
             return Ok();
         }
 
+        [HttpPut]
+        public IActionResult UpdateRoom(UpdateRoomDto updateRoomDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var values =  _mapper.Map<Room>(updateRoomDto);
+            return Ok();
+        }
     }
 }
 
