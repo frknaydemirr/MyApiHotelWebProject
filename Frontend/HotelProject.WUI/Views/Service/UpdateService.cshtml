@@ -1,12 +1,12 @@
-﻿
-@model CreateServiceDto
-
+﻿@model UpdateServiceDto
 @{
-    ViewData["Title"] = "AddService";
+    ViewData["Title"] = "UpdateService";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
- <form method="post">
+
+<form method="post">
+    <input type="hidden" asp-for="ServiceId" />
     <label>
         Hizmet İconu:
         <input type="text" asp-for="ServiceIcon" class="form-control" />
@@ -20,16 +20,17 @@
     </label>
     <br />
     <label>
-       Açıklama:
+        Açıklama:
         <input type="text" asp-for="Description" class="form-control" />
         <span asp-validation-for="Description" class="text-danger"></span>
     </label>
     <br />
 
+    <button class="btn btn-primary">Hizmet Düzenle</button>
 
-        <button class="btn btn-primary">Hizmet Ekle</button>
+</form>
 
-</form> 
+
 
 
 
