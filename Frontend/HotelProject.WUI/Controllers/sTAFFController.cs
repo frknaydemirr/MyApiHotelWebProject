@@ -12,7 +12,7 @@ namespace HotelProject.WUI.Controllers
     {
 
         private readonly IHttpClientFactory _httpClientFactory;
-        private string jsonData;
+
 
         public StaffController(IHttpClientFactory httpClientFactory)
         {
