@@ -4,6 +4,9 @@ using HotelProject.WUI.Dtos.AboutDto;
 using HotelProject.WUI.Dtos.LoginDto;
 using HotelProject.WUI.Dtos.RegisterDto;
 using HotelProject.WUI.Dtos.ServiceDto;
+using HotelProject.WUI.Dtos.StaffDto;
+using HotelProject.WUI.Dtos.SubscribeDto;
+using HotelProject.WUI.Dtos.TestimonialDto;
 
 namespace HotelProject.WUI.Mapping
 {
@@ -21,6 +24,13 @@ namespace HotelProject.WUI.Mapping
 
             CreateMap<ResultAboutDto, About>().ReverseMap();
             CreateMap<UpdateAboutDto, About>().ReverseMap();
+
+            CreateMap<ResultTestimonialDto, Testimonial>().ReverseMap();
+
+            CreateMap<ResultStaffDto, Staff>().ReverseMap();
+
+            CreateMap<CreateSubscribeDto, Subcribe>().ReverseMap();
+
         }
 
     }
