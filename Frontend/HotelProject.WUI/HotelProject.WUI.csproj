@@ -17,8 +17,4 @@
     <ProjectReference Include="..\..\HotelProject.DataAccessLayer\HotelProject.DataAccessLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dtos\NewFolder\" />
-  </ItemGroup>
-
 </Project>

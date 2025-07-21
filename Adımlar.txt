@@ -1,3 +1,8 @@
 1- Api Testi ve Swagger +
 2- Tema ekle 
 3- Register & login iþlemleri 
+Onay Bekliyor
+Onaylandý
+Ýptal Edildi
+Bekletiliyor
+

@@ -37,6 +37,7 @@ namespace HotelProject.WUI.Controllers
         }
 
 
+        [HttpGet]
         public IActionResult AddService()
         {
             return View();

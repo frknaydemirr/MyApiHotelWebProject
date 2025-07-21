@@ -16,7 +16,7 @@ namespace HotelProject.EntityLayer.Concrete
 
         public DateTime Checkin { get; set; }
 
-        public DateTime CkeckOut { get; set; }
+        public DateTime CheckOut { get; set; }
 
         public string AdultCount { get; set; }
 
