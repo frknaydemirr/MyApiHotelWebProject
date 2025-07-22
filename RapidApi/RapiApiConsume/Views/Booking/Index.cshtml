@@ -3,11 +3,20 @@
     Layout = null;
     int count = 0;
 } 
-
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-
 <div class="container">
     <br /> <br />
+@using (Html.BeginForm("Index", "BookingByCity", FormMethod.Post))
+{
+    <label>Şehir ID Bilgisi Giriniz</label>
+    <input type="text" class="form-control" name="cityID" />
+    <br />
+    <button class="btn btn-primary ">Şehir İçin Otelleri Listele</button>
+}
+    <br />
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
 
     <table class=" table table-bordered">
         <tr>
