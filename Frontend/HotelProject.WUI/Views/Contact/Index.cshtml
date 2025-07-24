@@ -1,4 +1,5 @@
 ﻿
+@* Contact Index Sayfası *@
 @{
     Layout = null;
 }
@@ -13,14 +14,10 @@
 
         @await Component.InvokeAsync("_NavbarPartial")
 
-        @await Component.InvokeAsync("_BookingCoverPartial")
-       
+        @await Component.InvokeAsync("_ContactCoverPartial")
 
 
-
-
-         @await Html.PartialAsync("/Views/Booking/AddBooking.cshtml")
-
+        @await Html.PartialAsync("/Views/Contact/SendMessage.cshtml")
 
 
         @await Html.PartialAsync("/Views/Default/_SubscribePartial.cshtml")

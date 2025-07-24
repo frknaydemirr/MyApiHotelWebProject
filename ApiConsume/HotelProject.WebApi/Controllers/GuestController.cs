@@ -7,58 +7,58 @@ namespace HotelProject.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RoomController : ControllerBase
+    public class GuestController : ControllerBase
     {
         //Api nin mutlaka hangi attribute ile çalışacağını belirtmemiz gerekiyor.
 
 
-        private readonly IRoomService _roomService;
+        private readonly IGuestService _guestService;
         //verilerimi buradan örnek alacağım!
 
-        public RoomController(IRoomService roomService)
+        public GuestController(IGuestService guestService)
         {
-            _roomService = roomService;
+            _guestService = guestService;
         }
 
         [HttpGet]  //verileri getirmek için kullanılır.
-        public IActionResult RoomList()
+        public IActionResult GuestList()
         {
-            var values = _roomService.TGetList();
+            var values = _guestService.TGetList();
             return Ok(values);
         }
 
         [HttpPost] //veri eklemek için kullanılır.
 
-        public IActionResult AddRoom(Room room)
+        public IActionResult AddGuest(Guest guest)
         {
-            _roomService.TInsert(room);
+            _guestService.TInsert(guest);
 
 
             return Ok();
         }
         [HttpDelete("{id}")]
 
-        public IActionResult DeleteRoom(int id)
+        public IActionResult DeleteGuest(int id)
         {
-            var values = _roomService.TGetById(id);
-            _roomService.TDelete(values);
+            var values = _guestService.TGetById(id);
+            _guestService.TDelete(values);
 
             return Ok();
         }
 
         [HttpPut] //veri güncellemek için kullanılır.
 
-        public IActionResult UpdateRoom(Room room)
+        public IActionResult UpdateGuest(Guest guest)
         {
-            _roomService.TUpdate(room);
+            _guestService.TUpdate(guest);
             return Ok();
         }
 
         [HttpGet("{id}")] //id ile veriyi getirmek için kullanılır.
 
-        public IActionResult GetRoomById(int id)
+        public IActionResult GetGuestById(int id)
         {
-            var values = _roomService.TGetById(id);
+            var values = _guestService.TGetById(id);
             return Ok(values);
         }
     }

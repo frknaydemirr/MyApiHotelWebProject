@@ -14,7 +14,7 @@ namespace HotelProject.WUI.Controllers
            
         //verilerimi listelemem lazım:
 
-                private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IHttpClientFactory _httpClientFactory;
 
 
         public BookingAdminController(IHttpClientFactory httpClientFactory)
@@ -51,5 +51,6 @@ namespace HotelProject.WUI.Controllers
 
             return View();
         }
+
     }
 }
