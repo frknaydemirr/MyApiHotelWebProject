@@ -36,6 +36,22 @@ namespace HotelProject.WUI.Controllers
             return View();
         }
 
+        public async Task<IActionResult> SendBox()
+        {
+
+            var client = _httpClientFactory.CreateClient(); //istemciyi oluşturuyorum.
+            var resposeMessage = await client.GetAsync("http://localhost:52704/api/SendMessage"); //adresine istek atıyorum.
+            if (resposeMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await resposeMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultSendBoxDto>>(jsonData);
+                return View(values);
+
+            }
+            return View();
+        }
+
+
 
         [HttpGet]
         public IActionResult AddSendMessage()
@@ -73,5 +89,36 @@ namespace HotelProject.WUI.Controllers
 
             return PartialView();
         }
+
+        public async Task< IActionResult > MessageDetailsBySendbox(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:52704/api/SendMessage/{id}");
+            if ((responseMessage.IsSuccessStatusCode))
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync(); // json verisini string olarak alıyorum.
+                var values = JsonConvert.DeserializeObject<GetMessageByIDDto>(jsonData);
+                // json verisini modelime dönüştürüyorum. listeleme yaptık
+                //liste olarak almıyoruz çünkü tek bir staff ı güncelleyeceğiz.
+                return View(values);
+            }
+            return View();
+        }
+
+        public async Task<IActionResult> MessageDetailsByInbox(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:52704/api/Contact/{id}");
+            if ((responseMessage.IsSuccessStatusCode))
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync(); // json verisini string olarak alıyorum.
+                var values = JsonConvert.DeserializeObject<InboxContactDto>(jsonData);
+                // json verisini modelime dönüştürüyorum. listeleme yaptık
+                //liste olarak almıyoruz çünkü tek bir staff ı güncelleyeceğiz.
+                return View(values);
+            }
+            return View();
+        }
+
     }
 }

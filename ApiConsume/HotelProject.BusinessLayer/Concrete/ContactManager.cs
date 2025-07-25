@@ -22,7 +22,7 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public Contact GetById(int id)
         {
-            throw new NotImplementedException();
+            return _contactDal.GetById(id);
         }
 
         public List<Contact> GetList()

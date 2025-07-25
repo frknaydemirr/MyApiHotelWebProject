@@ -33,5 +33,13 @@ namespace HotelProject.WebApi.Controllers
             var values = _contactService.GetList();
             return Ok(values);
         }
+
+        [HttpGet("{id}")] //id ile veriyi getirmek için kullanılır.
+
+        public IActionResult GetSendMessageById(int id)
+        {
+            var values = _contactService.GetById(id);
+            return Ok(values);
+        }
     }
 }

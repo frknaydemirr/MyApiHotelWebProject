@@ -6,7 +6,7 @@
 }
 
                     <div class="email-left-box">
-                        <a href="email-compose.html" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
+    <a href="/AdminContact/AddSendMessage" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
                 @await Html.PartialAsync("SidebarAdminContactPartial")
                         <h5 class="mt-5 m-b-10">Kategoriler</h5>
                 @await Html.PartialAsync("SidebarAdminContactCategoryPartial")
@@ -26,7 +26,7 @@
                         @foreach(var item in Model)
                         {
                             <div class="message">
-                        <a href="#">
+                <a href="/AdminContact/MessageDetailsByInbox/@item.ContactID">
                                     <div class="col-mail col-mail-1">
                                         <div class="email-checkbox">
                                             <input type="checkbox" id="chk2">
