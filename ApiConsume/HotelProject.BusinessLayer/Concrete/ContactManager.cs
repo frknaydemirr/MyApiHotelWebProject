@@ -27,7 +27,7 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public List<Contact> GetList()
         {
-            throw new NotImplementedException();
+           return _contactDal.GetList();
         }
 
         public void Insert(Contact t)

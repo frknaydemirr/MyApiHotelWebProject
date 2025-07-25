@@ -20,12 +20,18 @@ namespace HotelProject.WebApi.Controllers
         }
 
         [HttpPost] //veri eklemek için kullanılır.
-        public IActionResult AddBooking(Contact contact)
+        public IActionResult AddContact(Contact contact)
         {
             contact.Date=Convert.ToDateTime(DateTime.Now.ToString());
             _contactService.Insert(contact);
             return Ok();
         }
 
+        [HttpGet]  //verileri getirmek için kullanılır.
+        public IActionResult InboxListContact()
+        {
+            var values = _contactService.GetList();
+            return Ok(values);
+        }
     }
 }
