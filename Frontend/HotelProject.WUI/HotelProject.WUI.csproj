@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="ValidationRules\RoomValidationRules\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 </Project>
