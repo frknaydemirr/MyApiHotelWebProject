@@ -1,11 +1,13 @@
 ﻿using HotelProject.EntityLayer.Concrete;
 using HotelProject.WUI.Dtos.RegisterDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace HotelProject.WUI.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

@@ -1,11 +1,14 @@
 ﻿using HotelProject.EntityLayer.Concrete;
 using HotelProject.WUI.Dtos.LoginDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace HotelProject.WUI.Controllers
 {
+
+    [AllowAnonymous] //giriş sayfasına yönlendirme için autentication sonrası
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;

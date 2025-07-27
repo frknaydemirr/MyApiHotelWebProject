@@ -1,5 +1,6 @@
 ﻿using HotelProject.WUI.Dtos.ServiceDto;
 using HotelProject.WUI.Dtos.SubscribeDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ using System.Threading.Tasks;
 namespace HotelProject.WUI.Controllers
 {
     //Anasayfa
+
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

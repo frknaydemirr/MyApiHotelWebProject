@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace HotelProject.WUI.Controllers
 {
+
+
     public class GuestController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

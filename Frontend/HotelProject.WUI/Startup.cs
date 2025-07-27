@@ -4,9 +4,11 @@ using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
 using HotelProject.WUI.Dtos.GuestDto;
 using HotelProject.WUI.ValidationRules.GuestValidationRules;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -36,6 +38,20 @@ namespace HotelProject.WUI
             services.AddTransient<IValidator<UpdateGuestDto>, UpdateGuestValidator>();
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Startup));
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+
+            });//authorization iþlemi için... -> Kontrollü giriþ yapma iþlemi
+
+            services.ConfigureApplicationCookie(options => {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.LoginPath = "/Login/Index/";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +71,7 @@ namespace HotelProject.WUI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
 
             app.UseRouting();
 
