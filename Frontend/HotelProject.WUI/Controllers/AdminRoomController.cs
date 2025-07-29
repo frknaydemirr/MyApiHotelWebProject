@@ -1,4 +1,5 @@
-﻿using HotelProject.WUI.Dtos.RoomDto;
+﻿using HotelProject.WUI.Dtos.AppUserDto;
+using HotelProject.WUI.Dtos.RoomDto;
 using HotelProject.WUI.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
