@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace HotelProject.WUI.Controllers
 {
-    [AllowAnonymous]
+    
     public class AdminUsersController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

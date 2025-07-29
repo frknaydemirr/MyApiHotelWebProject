@@ -30,12 +30,13 @@ namespace HotelProject.WUI.Controllers
             {
                 return View();
             }
-            var appUser= new AppUser
+            var appUser = new AppUser
             {
                 Name = createNewUserDto.Name,
                 Surname = createNewUserDto.Surname,
                 UserName = createNewUserDto.Username,
-                Email = createNewUserDto.Mail
+                Email = createNewUserDto.Mail,
+                WorkLocationID = 2
             };
             var result= await _userManager.CreateAsync(appUser, createNewUserDto.Password);
             //bu metot identity kütüphanesine yeni bir kayıt oluşturmak için kullanılır.

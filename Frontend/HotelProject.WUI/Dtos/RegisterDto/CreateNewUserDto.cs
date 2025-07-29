@@ -33,5 +33,7 @@ namespace HotelProject.WUI.Dtos.RegisterDto
         [Required(ErrorMessage = "Şifre Tekrar  alanı gereklidir!")]
         [Compare("Password", ErrorMessage = "Şifreler eşleşmiyor!")]
         public string ConfirmPassword { get; set; }
+
+       
     }
 }
