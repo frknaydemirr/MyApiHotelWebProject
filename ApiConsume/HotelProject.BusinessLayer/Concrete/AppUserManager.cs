@@ -44,6 +44,11 @@ namespace HotelProject.BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<AppUser> TUsersListWithWorkLocations()
+        {
+            return _appUserDal.UsersListWithWorkLocations();
+        }
+
         public List<AppUser> _TUserListWithWorkLocation()
         {
             return _appUserDal._UserListWithWorkLocation();

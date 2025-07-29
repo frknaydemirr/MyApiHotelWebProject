@@ -17,7 +17,11 @@ namespace HotelProject.EntityLayer.Concrete
 
 
         public string ImageUrl { get; set; }
-        
+
+        public string Country { get; set; }
+
+        public string Gender { get; set; }
+
 
         public string WorkDepertment { get; set; }
 

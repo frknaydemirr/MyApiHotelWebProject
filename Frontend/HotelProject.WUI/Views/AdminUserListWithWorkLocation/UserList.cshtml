@@ -1,0 +1,18 @@
+﻿@model List<HotelProject.WUI.Dtos.AppUserDto.ResultAppUserWithWorkLocationDto>
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+@foreach(var item in Model)
+{
+  <p>@item.Name - @item.Surname - Kurum : @item.WorkLocationName - @item.WorkLocationID </p>
+    
+
+     
+   
+}
+
+
+
