@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+
+@await Component.InvokeAsync("_DashboardHeadPartial");
+
+@await Component.InvokeAsync("_DashboardWidgetPartial");
+
+
+
+
+@await Component.InvokeAsync("_DashboardLastFourStaffList")
+
+
+ @await Component.InvokeAsync("_DashboardLast6Bookings") 
+
+
+
+@await Component.InvokeAsync("_DashboardSubscribeCountPartial")
+
+
+@await Component.InvokeAsync("_DashboardScriptPartial")
+
+
+
+
+
+
+
+<!-- #/ container -->
+

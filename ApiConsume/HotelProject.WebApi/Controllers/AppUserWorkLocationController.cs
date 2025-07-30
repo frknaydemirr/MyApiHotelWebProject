@@ -28,8 +28,12 @@ namespace HotelProject.WebApi.Controllers
                Name= y.Name,
                Surname = y.Surname,
                 WorkLocationName = y.WorkLocation.WorkLocationCityName,
-                WorkLocationID = y.WorkLocationID
-                }).ToList();
+                WorkLocationID = y.WorkLocationID,
+                City= y.City,
+                Country = y.Country,
+                Gender = y.Gender,
+                ImageUrl = y.ImageUrl
+            }).ToList();
         
             return Ok(values);
         }
