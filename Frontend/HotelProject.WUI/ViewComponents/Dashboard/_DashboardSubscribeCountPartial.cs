@@ -32,9 +32,31 @@ namespace HotelProject.WUI.ViewComponents.Dashboard
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
              ResultInstagramFollowersDto   resultInstagramFollowersDtos = JsonConvert.DeserializeObject<ResultInstagramFollowersDto>(body);
-                return View(resultInstagramFollowersDtos);
+                ViewBag.v1= resultInstagramFollowersDtos.followers;
+                ViewBag.v1 = resultInstagramFollowersDtos.following;
+
             }
 
+
+    //        var client2 = new HttpClient();
+    //        var request2 = new HttpRequestMessage
+    //        {
+    //            Method = HttpMethod.Get,
+    //            RequestUri = new Uri("https://twitter32.p.rapidapi.com/profile?username=murattyucedag"),
+    //            Headers =
+    //{
+    //    { "x-rapidapi-key", "a36c6ee4cfmshc9269ffa9c21abfp187d19jsnaed6b4df9064" },
+    //    { "x-rapidapi-host", "twitter32.p.rapidapi.com" },
+    //},
+    //        };
+    //        using (var response2 = await client2.SendAsync(request))
+    //        {
+    //            response2.EnsureSuccessStatusCode();
+    //            var body2 = await response2.Content.ReadAsStringAsync();
+                
+    //        }
+
+            return View();
         }
     }
 }
